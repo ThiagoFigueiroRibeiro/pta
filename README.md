@@ -1,14 +1,37 @@
-# Practical Exam
-Please **fork** this repo and **develop your server** based on the protocol described in [pta.pdf][ptad] file (in portuguese). Before coding, I suggest you carefully read the document spec and understand the protocol. Experiment the protocol, using paper and pencil, drawing examples of protocol usage.
+# PTA Server
 
-Please develop your server code in the directory [pta-server][ptas]. The user list that must be accepted by the protocol must be read from the [pta-server/users.txt][ptau] file. The files to be served by your server are in the [pta-server/files][ptaa] directory. Please don't change these files and directories.
+## Overview
 
-Your server code will be evaluated through an automatic testing tool. This way, in order to test your code you can use the [pta-client.py][ptac] file. This file makes some tests but it is not an extensive test. So, keep in mind that the actual evaluation will test other aspects of your protocol implementation.
+The **PTA Server** is a file transfer protocol built to communicate over TCP. This guide will help you set up and run the server and client for proper functionality.
 
-You could use **any programming language**. But you must provide instructions in order to successfully run your code. Describe all stuff about libraries, interpreters, versions and so on. After finishing development, you must share the link of your github repo in the evaluation environment ([sigaa.ufpa.br](http://sigaa.ufpa.br/)).
+## How to Get Started
 
-[ptas]: <https://github.com/glaucogoncalves/pta/tree/master/pta-server>
-[ptau]: <https://github.com/glaucogoncalves/pta/tree/master/pta-server/users.txt>
-[ptaa]: <https://github.com/glaucogoncalves/pta/tree/master/pta-server/files>
-[ptac]: <https://github.com/glaucogoncalves/pta/tree/master/pta-client.py>
-[ptad]: <https://github.com/glaucogoncalves/pta/tree/master/pta.pdf>
+### 1. Run the PTA Server
+
+To start the PTA server, run the script `pta_server_v1.0.py`. You must specify the **IP address**, **Port**, and **User** as arguments.
+
+#### Example Command:
+
+```bash
+python .\pta-client.py localhost 11550 user2
+```
+
+In this example:
+- `localhost` is the IP address where the server is hosted.
+- `11550` is the port where the server listens.
+- `user2` is the client username.
+
+Make sure that the user is listed in the valid users' file on the server for successful authentication.
+
+## Requirements
+
+- **Python 3.x** installed on your system.
+- Ensure the **valid users list** and **server files directory** are properly configured on the server.
+
+## Troubleshooting
+
+- If the server does not start, verify that the IP address and port are available.
+- Make sure the client is a valid user listed on the server.
+- For connection issues, confirm that the firewall settings allow communication on the specified port.
+
+For further help, check the log output on the server terminal for detailed error messages.
